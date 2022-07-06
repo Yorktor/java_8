@@ -92,3 +92,47 @@ System.out.println(collect1);<br />
 List< Integer > collect2 = list.stream().filter(noGreaterThan5.or((x) -> x < 3)).collect(Collectors.toList());<br />
 System.out.println(collect2);<br />
 
+## BiPredicate
+BiPredicate is a functional interface, which accepts two arguments and returns a boolean, basically this BiPredicate is same with the Predicate, instead, it takes 2 arguments for the test.<br />
+```
+@FunctionalInterface
+public interface BiPredicate<T, U> {
+    boolean test(T t, U u);
+}
+```
+BiPredicate<String, Integer> filter = (x, y) -> x.length() == y;<br />
+
+## Consumer
+Consumer is a functional interface; it takes an argument and returns nothing.<br />
+```
+@FunctionalInterface
+public interface Consumer<T> {
+  void accept(T t);
+}
+```
+Consumer<String> print = x -> System.out.println(x);<br />
+print.accept("java");<br />
+
+## BiConsumer
+BiConsumer is a functional interface; it takes two arguments and returns nothing.<br />
+```
+@FunctionalInterface
+public interface BiConsumer<T, U> {
+  void accept(T t, U u);
+}
+```
+BiConsumer<Integer, Integer> addTwo = (x, y) -> System.out.println(x + y);<br />
+addTwo.accept(1, 2);<br />
+
+## Supplier
+Supplier is a functional interface; it takes no arguments and returns a result.<br />
+```
+@FunctionalInterface
+public interface Supplier<T> {
+    T get();
+}
+```
+Supplier<LocalDateTime> s = () -> LocalDateTime.now();<br />
+LocalDateTime time = s.get();<br />
+System.out.println(time);<br />
+
