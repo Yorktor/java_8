@@ -84,8 +84,8 @@ System.out.println(result);
 ```
 
 ## Predicate
-```java
 In Java 8, Predicate is a functional interface, which accepts an argument and returns a boolean. Usually, it used to apply in a filter for a collection of objects.
+```java
 @FunctionalInterface
 public interface Predicate<T> {
   boolean test(T t);
@@ -93,20 +93,20 @@ public interface Predicate<T> {
 ```
 ```java
 Predicate<Integer> noGreaterThan5 = x -> x > 5;
-List< Integer > list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-List< Integer > collect = list.stream().filter(noGreaterThan5).collect(Collectors.toList());
+List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+List<Integer> collect = list.stream().filter(noGreaterThan5).collect(Collectors.toList());
 System.out.println(collect);
 ```
 
 ### and()
 ```java
-List< Integer > collect1 = list.stream().filter(noGreaterThan5.and((x) -> x < 9)).collect(Collectors.toList());
+List<Integer> collect1 = list.stream().filter(noGreaterThan5.and((x) -> x < 9)).collect(Collectors.toList());
 System.out.println(collect1);
 ```
 
 ### or()
 ```java
-List< Integer > collect2 = list.stream().filter(noGreaterThan5.or((x) -> x < 3)).collect(Collectors.toList());
+List<Integer> collect2 = list.stream().filter(noGreaterThan5.or((x) -> x < 3)).collect(Collectors.toList());
 System.out.println(collect2);
 ```
 
