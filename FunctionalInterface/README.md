@@ -1,3 +1,4 @@
+# Functional Interface
 ```
 Source: https://mkyong.com/tutorials/java-8-tutorials/
 ```
